@@ -3,11 +3,12 @@ Currency rate App, that fetches data from bank.lv.
 
 ## Installation
 1. Update .env with necessary DB configuration
-2. Migrate database
+2. Run composer install
+3. Migrate database
 ```bash
 $  php bin/console doctrine:migrations:migrate
 ```
-3. Run CLI to fetch data
+4. Run CLI to fetch data
 
 ## CLI
 Fetching bank data
