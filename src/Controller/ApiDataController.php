@@ -8,8 +8,15 @@ use Symfony\Component\HttpFoundation\Request;
 
 class ApiDataController extends AbstractController
 {
-    public function getByName(Request $request, CurrencyRateRepository $currencyRateRepository)
-    {
+    /**
+     * @param Request                $request
+     * @param CurrencyRateRepository $currencyRateRepository
+     * @return JsonResponse
+     */
+    public function getByName(
+        Request $request,
+        CurrencyRateRepository $currencyRateRepository
+    ): JsonResponse {
         $response = [];
         $items = $currencyRateRepository->findByName($request->get('name'));
         foreach ($items as $item) {
