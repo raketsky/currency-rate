@@ -6,6 +6,11 @@ currency_list:
     controller: App\Controller\CurrencyController::latest
     methods:    GET
 currency_item:
-    path:       /currency/{name}
+    path:       /{name}
     controller: App\Controller\CurrencyController::item
+    methods:    GET
+
+api_currency_by_name:
+    path:       /api/currency/{name}
+    controller: App\Controller\ApiDataController::getByName
     methods:    GET

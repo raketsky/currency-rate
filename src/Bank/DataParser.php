@@ -23,13 +23,12 @@ class DataParser
         return $data;
     }
 
-    private function parseDateFromTitle(string $title): string
+    private function parseDateFromTitle(string $title): DateTime
     {
         $re = '/[0-9]+. [A-Za-z]+/m';
         preg_match_all($re, $title, $matches, PREG_SET_ORDER, 0);
-        $date = DateTime::createFromFormat('j. F', $matches[0][0]);
 
-        return $date->format('Y-m-d');
+        return DateTime::createFromFormat('j. F', $matches[0][0]);
     }
 
     private function parseItemsFromDescription(string $description): array
