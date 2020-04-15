@@ -1,3 +1,11 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+currency_list:
+    path:       /
+    controller: App\Controller\CurrencyController::latest
+    methods:    GET
+currency_item:
+    path:       /currency/{name}
+    controller: App\Controller\CurrencyController::item
+    methods:    GET

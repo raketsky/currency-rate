@@ -1,0 +1,21 @@
+{% extends "base.twig" %}
+
+{% block content_title %}Latest Currencies{% endblock %}
+{% block content %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for currency in currencies %}
+            <tr>
+                <th scope="row"><a href="{{path('currency_item', {'name': currency.name|lower})}}">{{currency.name}}</a></th>
+                <td>{{currency.price|price}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

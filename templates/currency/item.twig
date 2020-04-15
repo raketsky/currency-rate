@@ -1,0 +1,22 @@
+{% extends "base.twig" %}
+
+{% block content_title %}{{name|upper}} Currency{% endblock %}
+{% block content %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for currency in history %}
+            <tr>
+                <th scope="row">{{currency.date}}</th>
+                <td>{{currency.price|price}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
